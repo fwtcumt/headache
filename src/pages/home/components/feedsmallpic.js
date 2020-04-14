@@ -1,6 +1,5 @@
 import React from 'react';
 import FeedLink from './feedlink';
-import pic from '../images/feed.jpg';
 
 class FeedSmallPic extends React.Component {
   constructor(props) {
@@ -9,13 +8,20 @@ class FeedSmallPic extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+    const pic = data.pics[0];
+    const isAd = data.isAd;
+    const isTop = data.isTop;
+
     return (
-      <FeedLink className="feed feed-smallpic" href="https://www.toutiao.com">
+      <FeedLink className="feed feed-smallpic" href="/p">
         <div className="feed-l">
-          <div className="feed-tit line2">福建常务副省长张志南落马，系今年首虎被查当晚省委通报，可谓雷厉风行。</div>
+          <div className="feed-tit line2">{data.title}</div>
           <div className="feed-info">
-            <span className="fixtag fixtop">置顶</span>
-            中国经济网 评论 322 41分钟前
+            {isAd && <span className="fixtag">广告</span>}
+            {isTop && <span className="fixtag fixtop">置顶</span>}
+            {data.info}
+            {isAd && <div className="close" onClick={this.handleClose} />}
           </div>
         </div>
         <div className="feed-r">

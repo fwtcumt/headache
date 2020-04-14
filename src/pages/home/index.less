@@ -171,6 +171,39 @@
       }
     }
 
+    // 视频信息流
+    .feed-video {
+      position: relative;
+      .feed-tit {
+        position: absolute;
+        left: 0;
+        top: 16px;
+        z-index: 4;
+        width: 100%;
+        color: #eee;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        height: 40%;
+        font-size: 14px;
+        padding: 5px 10px;
+      }
+      .feed-pic {
+        position: relative;
+        overflow: hidden;
+        img {
+          float: left;
+          width: 100%;
+        }
+        .videoplay {
+          position: absolute;
+          top: 0; left: 0; z-index: 2;
+          height: 100%;
+          width: 100%;
+          background: url(./images/playicon_video@3x.png) no-repeat center;
+          background-size: 50px;
+        }
+      }
+    }
+
     // 到底了
     .feed-none {
       text-align: center;

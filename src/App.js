@@ -11,11 +11,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.StrictMode>
-        <Router>
-          {getRoutes('/')}
-        </Router>
-      </React.StrictMode>
+      <Router>
+        {getRoutes('/')}
+      </Router>
     )
   }
 }

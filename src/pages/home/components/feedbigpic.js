@@ -1,6 +1,5 @@
 import React from 'react';
 import FeedLink from './feedlink';
-import pic from '../images/feedbig.jpg';
 
 class FeedBigPic extends React.Component {
   constructor(props) {
@@ -9,14 +8,22 @@ class FeedBigPic extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+    const pic = data.pics[0];
+    const isAd = data.isAd;
+    const isTop = data.isTop;
+
     return (
-      <FeedLink className="feed feed-bigpic" to="/list">
-        <div className="feed-tit line3">福建常务副省长张志南落马，系今年首虎被查当晚省委通报</div>
-        <div className="feed-pic">
+      <FeedLink className="feed feed-bigpic" to="/p">
+        <div className="feed-tit line3">{data.title}</div>
+        {pic && <div className="feed-pic">
           <img src={pic} alt=""/>
-        </div>
+        </div>}
         <div className="feed-info">
-          中国经济网 评论 322 41分钟前
+          {isAd && <span className="fixtag">广告</span>}
+          {isTop && <span className="fixtag fixtop">置顶</span>}
+          {data.info}
+          {isAd && <div className="close" onClick={this.handleClose} />}
         </div>
       </FeedLink>
     );

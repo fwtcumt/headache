@@ -1,5 +1,6 @@
 .page-search {
 
+  // 搜索头部
   .header {
     padding: 10px 17px;
     border-bottom: 1px solid #e8e8e8;
@@ -26,7 +27,7 @@
         width: 60px;
         text-align: center;
         border-left: 1px solid #e8e8e8;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bolder;
       }
       .clear {
@@ -45,11 +46,73 @@
     }
   }
 
-  .guess-tit {
-    margin: 0 17px;
-    font-size: 14px;
-    color: #999;
-    line-height: 40px;
+  // 联想搜索词
+  .associatewords {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: calc(100% - 65px);
+    background-color: #fff;
+    padding: 0 17px 10px;
+    overflow-y: auto;
+    .word {
+      line-height: 46px;
+      color: #222;
+      font-weight: bolder;
+      padding-left: 30px;
+      background: url(./images/search_light.png) no-repeat left center;
+      background-size: 24px;
+      border-bottom: 1px solid #e8e8e8;
+      .match {
+        color: #999;
+        font-weight: normal;
+      }
+    }
+  }
+
+  // 猜测搜索词
+  .guessword {
+    .guess-tit {
+      margin: 0 17px;
+      font-size: 14px;
+      color: #999;
+      line-height: 40px;
+    }
+    .guess-list {
+      display: flex;
+      flex-wrap: wrap;
+      .guess-item {
+        position: relative;
+        width: 50%;
+        padding: 0 17px;
+        line-height: 38px;
+        color: #222;
+        &.rec {
+          padding-left: 40px;
+          background: url(./images/tag_rec.png) no-repeat 17px center;
+          background-size: 17px;
+        }
+        &:nth-child(odd) {
+          &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 1px;
+            height: 16px;
+            background-color: #e8e8e8;
+          }
+        }
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
 }
