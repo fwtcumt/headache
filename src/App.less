@@ -15,6 +15,31 @@ body {
   overflow: hidden;
 }
 
+//第一行溢出显示...
+.line1 {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+}
+
+.line2 {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}
+
+.line3 {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient: vertical;
+}
+
 .page-root {
   position: relative;
   overflow: auto;

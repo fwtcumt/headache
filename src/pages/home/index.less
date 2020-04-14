@@ -40,7 +40,7 @@
       white-space: nowrap;
       .nav {
         display: inline-block;
-        padding: 0 10px;
+        padding: 0 14px;
         font-size: 17px;
         color: #505050;
         &.active {
@@ -63,10 +63,10 @@
       }
       &::before {
         width: 17px;
-        height: 4px;
+        height: 2px;
       }
       &::after {
-        width: 4px;
+        width: 2px;
         height: 17px;
       }
     }
@@ -82,20 +82,91 @@
       margin: 0 15px;
       padding: 16px 0;
       border-bottom: 1px solid rgba(221,221,221,.4);
-      overflow: hidden;
+      text-decoration: none;
       &:last-of-type {
         border-bottom-color: transparent;
       }
 
+      .feed-tit {
+        font-size: 17px;
+        line-height: 1.4;
+        color: #222;
+      }
+
+      .feed-info {
+        margin-top: 6px;
+        font-size: 12px;
+        color: #999;
+        .fixtag {
+          display: inline-block;
+          border: 1px solid rgba(153, 153, 153, 0.5);
+          border-radius: 2px;
+          height: 16px;
+          line-height: 16px;
+          font-size: 10px;
+          padding: 0 2px;
+          margin-right: 4px;
+          &.fixtop {
+            color: #f85959;
+            border-color: rgba(248, 89, 89, 0.5);
+          }
+        }
+        .close {
+          position: relative;
+          float: right;
+          box-shadow: 0 0 1px #999;
+          border-radius: 2px;
+          margin-top: 3px;
+          height: 12px;
+          width: 20px;
+          background: url(./images/feed_close.png) no-repeat center;
+          background-size: 8px;
+        }
+      }
+    }
+
+    // 小图信息流
+    .feed-smallpic {
       .feed-l {
-        float: left;
+        display: inline-block;
+        vertical-align: middle;
         width: 67%;
         padding-right: 12px;
       }
       .feed-r {
-        float: left;
+        display: inline-block;
+        vertical-align: middle;
         width: 33%;
+        overflow: hidden;
         img {
+          float: left;
+          width: 100%;
+        }
+      }
+    }
+
+    // 三图信息流
+    .feed-threepic {
+      .feed-pic {
+        margin-top: 4px;
+        overflow: hidden;
+        img {
+          float: left;
+          width: 33%;
+          &:nth-of-type(2) {
+            margin: 0 .5%;
+          }
+        }
+      }
+    }
+
+    // 大图信息流
+    .feed-bigpic {
+      .feed-pic {
+        margin-top: 4px;
+        overflow: hidden;
+        img {
+          float: left;
           width: 100%;
         }
       }

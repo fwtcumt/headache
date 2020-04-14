@@ -2,6 +2,7 @@
   "name": "portal-site-cra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fwtcumt.github.io/portal",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",

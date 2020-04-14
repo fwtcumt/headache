@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,35 +16,6 @@ class NavBar extends React.Component {
           <span className="nav">社会</span>
           <span className="nav">娱乐</span>
           <span className="nav">军事</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
-          <span className="nav">热点</span>
           <span className="nav">热点</span>
         </div>
         <div className="plusnav" />
