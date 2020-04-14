@@ -12,7 +12,7 @@ class Header extends React.Component {
       <header className="header">
         <Link className="hd-l" to="/message" />
         <div className="hd-m" />
-        <Link className="hd-r" to="/search" />
+        <Link className="hd-r" to="/hot" />
       </header>
     );
   }

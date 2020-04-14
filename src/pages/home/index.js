@@ -27,6 +27,7 @@ class Home extends React.Component {
           <FeedBigPic />
           <FeedSmallPic />
           <FeedSmallPic />
+          <div className="feed-none">------------ 到底了 ------------</div>
         </div>
       </div>
     );

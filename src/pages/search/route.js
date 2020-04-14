@@ -2,7 +2,7 @@ import getLoadable from 'utils/getLoadable';
 
 export default {
   exact: true,
-  path: '/detail',
+  path: '/search',
   fatherPath: '/',
   component: getLoadable(() => import('./index'))
 };
