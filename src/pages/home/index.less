@@ -1,0 +1,107 @@
+.page-home {
+  display: flex;
+  flex-direction: column;
+
+  // home页头
+  .header {
+    height: 44px;
+    padding: 10px 20px;
+    background-color: #d43d3d;
+    display: flex;
+    justify-content: space-between;
+    .hd-l {
+      width: 40px;
+      background: url(./images/feed_message@3x.png) no-repeat center;
+      background-size: contain;
+    }
+    .hd-m {
+      width: 100px;
+      background: url(./images/wap_logo@3x.png) no-repeat center;
+      background-size: cover;
+    }
+    .hd-r {
+      width: 40px;
+      background: url(./images/feed_search@3x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  // hone频道列表
+  .navbar {
+    height: 37px;
+    background-color: #f4f5f6;
+    border-bottom: 1px solid rgba(221,221,221,.4);
+    display: flex;
+    .navlist {
+      flex: 1;
+      line-height: 36px;
+      overflow: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      .nav {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 17px;
+        color: #505050;
+        &.active {
+          color: #f85959;
+        }
+      }
+    }
+    .plusnav {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      box-shadow: -4px 0 5px -3px #aaa;
+      &::before, &::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        background-color: #f85959;
+      }
+      &::before {
+        width: 17px;
+        height: 4px;
+      }
+      &::after {
+        width: 4px;
+        height: 17px;
+      }
+    }
+  }
+
+  // home信息流
+  .feedlist {
+    flex: 1;
+    overflow: auto;
+    overflow-x: hidden;
+    .feed {
+      display: block;
+      margin: 0 15px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(221,221,221,.4);
+      overflow: hidden;
+      &:last-of-type {
+        border-bottom-color: transparent;
+      }
+
+      .feed-l {
+        float: left;
+        width: 67%;
+        padding-right: 12px;
+      }
+      .feed-r {
+        float: left;
+        width: 33%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+
+}
