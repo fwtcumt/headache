@@ -10,23 +10,23 @@ class AssociateWord extends React.Component {
     const word = this.props.word;
     return [
       {
-        text: `今天是${word}的生日吗`,
+        word: `今天是${word}的生日吗`,
         html: <span>今天是<span className="match">{word}</span>的生日吗</span>
       },
       {
-        text: `${word}是最美的`,
+        word: `${word}是最美的`,
         html: <span><span className="match">{word}</span>是最美的</span>
       },
       {
-        text: `我喜欢${word}`,
+        word: `我喜欢${word}`,
         html: <span>我喜欢<span className="match">{word}</span></span>
       },
       {
-        text: `我想你了${word}`,
+        word: `我想你了${word}`,
         html: <span>我想你了<span className="match">{word}</span></span>
       },
       {
-        text: `除了${word}，我谁都不理`,
+        word: `除了${word}，我谁都不理`,
         html: <span>除了<span className="match">{word}</span>，我谁都不理</span>
       }
     ];
@@ -38,13 +38,13 @@ class AssociateWord extends React.Component {
 
     return (
       <div className="associatewords">
-        {associateWords.map(word => (
+        {associateWords.map(item => (
           <div
-            key={word.text}
+            key={item.word}
             className="word line1"
-            onClick={() => onSelectWord && onSelectWord(word.text)}
+            onClick={() => onSelectWord && onSelectWord(item.word)}
           >
-            {word.html}
+            {item.html}
           </div>
         ))}
       </div>

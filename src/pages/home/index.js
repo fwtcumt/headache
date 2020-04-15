@@ -82,15 +82,23 @@ const feedList = [
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      navType: 1
+    }
+  }
+
+  // 切换频道
+  handleChangeNav = (type) => {
+    this.setState({ navType: type });
   }
    
   render() {
+    const { navType } = this.state;
 
     return (
       <div className="page-root page-home">
         <Header />
-        <Navbar />
+        <Navbar type={navType} onChangeNav={this.handleChangeNav} />
         <div className="feedlist">
           {feedList.map(item => {
             const FeedItem = feedComponents[item.layout];

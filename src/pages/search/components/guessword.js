@@ -1,10 +1,22 @@
 import React from 'react';
 
 const guessWordList = [
-  '化妆棉使用步骤图解',
-  '护肤小常识',
-  '曲剧李豁子离婚',
-  '儿童学画画小视频'
+  {
+    word: '化妆棉使用步骤图解',
+    rec: true
+  },
+  {
+    word: '护肤小常识',
+    rec: false
+  },
+  {
+    word: '曲剧李豁子离婚',
+    rec: false
+  },
+  {
+    word: '儿童学画画小视频',
+    rec: false
+  }
 ];
 
 class GuessWord extends React.Component {
@@ -20,13 +32,13 @@ class GuessWord extends React.Component {
       <div className="guessword">
         <div className="guess-tit">猜你想搜</div>
         <div className="guess-list">
-          {guessWordList.map(word => (
+          {guessWordList.map(item => (
             <div
-              key={word}
-              className="guess-item line1 rec"
-              onClick={() => onSelectWord && onSelectWord(word)}
+              key={item.word}
+              className={`guess-item line1 ${item.rec ? 'rec' : ''}`}
+              onClick={() => onSelectWord && onSelectWord(item.word)}
             >
-              {word}
+              {item.word}
             </div>
           ))}
         </div>

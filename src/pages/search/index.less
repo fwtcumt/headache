@@ -1,4 +1,6 @@
 .page-search {
+  display: flex;
+  flex-direction: column;
 
   // 搜索头部
   .header {
@@ -22,6 +24,11 @@
         color: #222;
         caret-color:red;
         padding-right: 30px;
+        background-color: transparent;
+        &:disabled {
+          background-color: transparent;
+          color: #aaa;
+        }
       }
       .searchbtn {
         width: 60px;
@@ -29,6 +36,10 @@
         border-left: 1px solid #e8e8e8;
         font-size: 16px;
         font-weight: bolder;
+        &.loading {
+          background: url('../../assets/loading.gif') no-repeat center;
+          background-size: 24px;
+        }
       }
       .clear {
         position: absolute;
@@ -46,17 +57,24 @@
     }
   }
 
+  // 主体
+  .body {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  // 搜索状态
+  .loading-content {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding-top: 30px;
+  }
+
   // 联想搜索词
   .associatewords {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: calc(100% - 65px);
-    background-color: #fff;
     padding: 0 17px 10px;
-    overflow-y: auto;
     .word {
       line-height: 46px;
       color: #222;
@@ -115,4 +133,21 @@
     }
   }
 
+  // 搜索结果
+  .resultword {
+    .result-tit {
+      margin: 0 17px;
+      font-size: 14px;
+      color: #999;
+      line-height: 40px;
+    }
+    .noresult {
+      margin: 20px 17px 0;
+      text-align: center;
+      color: #222;
+      b {
+        color: red;
+      }
+    }
+  }
 }
