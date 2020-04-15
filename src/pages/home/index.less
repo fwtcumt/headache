@@ -93,33 +93,46 @@
       }
 
       .feed-info {
-        margin-top: 6px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
         font-size: 12px;
         color: #999;
-        .fixtag {
-          display: inline-block;
-          border: 1px solid rgba(153, 153, 153, 0.5);
-          border-radius: 2px;
-          height: 16px;
-          line-height: 16px;
-          font-size: 10px;
-          padding: 0 2px;
-          margin-right: 4px;
-          &.fixtop {
-            color: #f85959;
-            border-color: rgba(248, 89, 89, 0.5);
+        
+        .info-l {
+          display: flex;
+          align-items: center;
+          .pretag {
+            margin-right: 4px;
           }
         }
-        .close {
-          position: relative;
-          float: right;
-          box-shadow: 0 0 1px #999;
-          border-radius: 2px;
-          margin-top: 3px;
-          height: 12px;
-          width: 20px;
-          background: url(./images/feed_close.png) no-repeat center;
-          background-size: 8px;
+
+        .info-r {
+          display: flex;
+          align-items: center;
+          .pretag {
+            margin-left: 4px;
+          }
+        }
+
+        .pretag {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 0 1px rgb(153, 153, 153);
+          border-radius: 1px;
+          font-size: 10px;
+          padding: 0 4px;
+          height: 14px;
+          &.red {
+            color: #f85959;
+            box-shadow: 0 0 1px rgba(248, 89, 89, 1);
+          }
+          &.close {
+            width: 20px;
+            background: url(./images/feed_close.png) no-repeat center;
+            background-size: 8px;
+          }
         }
       }
     }
@@ -200,6 +213,15 @@
           width: 100%;
           background: url(./images/playicon_video@3x.png) no-repeat center;
           background-size: 50px;
+        }
+        .videotime {
+          position: absolute;
+          bottom: 4px; right: 4px; z-index: 3;
+          padding: 4px 10px;
+          color: #eee;
+          background-color: rgba(0,0,0,.2);
+          font-size: 10px;
+          border-radius: 10px;
         }
       }
     }
