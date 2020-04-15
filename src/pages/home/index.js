@@ -51,7 +51,7 @@ const feedList = [
     title: '保姆被骗 为挽回损失说出一个"秘密" 女主竟被婆婆和丈夫告上法庭',
     info: '央视网新闻 评论 2 8分钟前',
     layout: 'smallpic',
-    pics: ['http://p6-tt-ipv6.byteimg.com/img/tos-cn-p-0026/106a0630a44b6357617822e6f4fb5541~tplv-tt-cs0:640:360.jpg']
+    pics: ['https://p6-tt-ipv6.byteimg.com/img/tos-cn-p-0026/106a0630a44b6357617822e6f4fb5541~tplv-tt-cs0:640:360.jpg']
   },
   {
     id: '6815362200710939149',
