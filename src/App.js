@@ -11,7 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router basename="/portal">
+      <Router basename="/headache">
         {getRoutes('/')}
       </Router>
     )

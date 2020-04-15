@@ -2,7 +2,7 @@
   "name": "portal-site-cra",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fwtcumt.github.io/portal",
+  "homepage": "https://fwtcumt.github.io/headache",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
