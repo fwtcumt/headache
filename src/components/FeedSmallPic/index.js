@@ -1,16 +1,27 @@
 import React from 'react';
-import FeedLink from './feedlink';
+import SmartLink from '../SmartLink';
 
+/**
+ * @param {string} data 小图模板对象
+ * @param {string} data.id 信息流id
+ * @param {string} data.title 信息流标题
+ * @param {string} data.info 信息流额外信息
+ * @param {array} data.pics 图片数组，必须一张图
+ * @param {string} data.adLink 广告链接
+ * @param {boolean} data.isAd 是不是广告
+ * @param {boolean} data.isTop 是不是置顶
+ * @param {boolean} data.isHot 是不是热门
+**/
 class FeedSmallPic extends React.Component {
   constructor(props) {
     super(props);
     this.state = {}
   }
 
-  handleClose = e => {
+  handleRemove = e => {
     e.stopPropagation();
     e.preventDefault();
-    
+    this.props.onRemove && this.props.onRemove();
   }
 
   render() {
@@ -23,7 +34,7 @@ class FeedSmallPic extends React.Component {
     };
 
     return (
-      <FeedLink className="feed feed-smallpic" {...linkUrl}>
+      <SmartLink className="feed feed-smallpic" {...linkUrl}>
         <div className="feed-l">
           <div className="feed-tit line2">{data.title}</div>
           <div className="feed-info">
@@ -34,14 +45,14 @@ class FeedSmallPic extends React.Component {
               {data.info}
             </div>
             <div className="info-r">
-              {isAd && <div className="pretag close" onClick={this.handleClose} />}
+              {isAd && <div className="pretag close" onClick={this.handleRemove} />}
             </div>
           </div>
         </div>
         <div className="feed-r">
           <img src={pic} alt=""/>
         </div>
-      </FeedLink>
+      </SmartLink>
     );
   }
 }

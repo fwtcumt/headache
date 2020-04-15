@@ -1,10 +1,10 @@
 import React from 'react';
+import FeedSmallPic from 'components/FeedSmallPic';
+import FeedThreePic from 'components/FeedThreePic';
+import FeedBigPic from 'components/FeedBigPic';
+import FeedVideo from 'components/FeedVideo';
 import Header from './components/header.js';
 import Navbar from './components/navbar.js';
-import FeedSmallPic from './components/feedsmallpic';
-import FeedThreePic from './components/feedthreepic';
-import FeedBigPic from './components/feedbigpic';
-import FeedVideo from './components/feedvideo';
 import './index.less';
 
 const feedComponents = {
@@ -76,6 +76,29 @@ const feedList = [
     isAd: true,
     adLink: 'https://www.chengzijianzhan.com/tetris/page/6780199724038225934/',
     pics: ['https://p6-tt.byteimg.com/img/ad-tetris-site/file/1578902412117/5558a4307a3d2437996c41ad3dd8f9ba~noop.webp']
+  },
+  {
+    id: '6815902084869653004',
+    title: '奥巴马宣布支持美民主党总统竞选人拜登',
+    info: '中国新闻网 评论 0 2天前',
+    layout: 'bigpic',
+    pics: ['http://p29-tt.byteimg.com/img/pgc-image/RpbYHUi6Hgs4Do~tplv-tt-cs0:640:360.jpg']
+  },
+  {
+    id: '6813595080142619144',
+    title: '摸金校尉、尸香魔芋、黑驴蹄子...《鬼吹灯》这些“专业词汇”来自哪里？',
+    info: '三联生活周刊 评论 25 04-15 23:58',
+    layout: 'threepic',
+    pics: ['https://p3.pstatp.com/list/pgc-image/817b0f96a1874a21bc963b384a0e1a7c', 'https://p3.pstatp.com/list/dfic-imagehandler/4fbbbb1e-8a60-475a-b914-4a42423fce82', 'https://p3.pstatp.com/list/dfic-imagehandler/1fd91e64-a960-4d9b-b738-f7b174f3dfe8']
+  },
+  {
+    id: '6814744443728462350',
+    title: '全新奥迪A4L 做更强大的自己',
+    info: '懂车帝优选 04-15 22:58',
+    layout: 'bigpic',
+    isAd: true,
+    adLink: 'https://cars.toutiao.com/zst/audi/20200411dcar/?group_id=6814744443728462350&app=',
+    pics: ['http://sf3-ttcdn-tos.pstatp.com/img/web.business.image/202004105d0d90f9465c5aad458f8186~640x0.image']
   },
 ];
 
