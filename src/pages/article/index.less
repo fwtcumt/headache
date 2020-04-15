@@ -1,0 +1,78 @@
+.page-article {
+  padding: 14px;
+
+  .title {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    .user-info {
+      display: flex;
+      align-items: center;
+      img {
+        height: 24px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .u-name {
+        font-size: 14px;
+        font-weight: bolder;
+        &.vip {
+          padding-right: 20px;
+          background: url(./images/vip.png) no-repeat right center;
+          background-size: 14px;
+        }
+      }
+    }
+    .p-info {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+
+  .content {
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    p {
+      word-wrap: break-word;
+      color: #222;
+      text-align: justify;
+      font-size: 18px;
+      line-height: 1.76;
+      margin-top: 17px;
+    }
+    a {
+      color: #5784df;
+    }
+    img {
+      width: 100%;
+      display: block;
+      margin-top: 4px;
+    }
+    h1 {
+      font-size: 18px;
+      border-left-width: 3px;
+      border-left: solid #ed4040;
+      padding-left: 6px;
+      line-height: 28px;
+      margin: 24px 0;
+    }
+    blockquote {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 15px;
+      color: #999;
+      border: 1px solid #E8E8E8;
+      background: #F4F5F6;
+      margin-top: 17px;
+    }
+  }
+}
