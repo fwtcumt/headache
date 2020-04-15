@@ -11,3 +11,7 @@ To run the project, you can run:
 To build the project, you can run:
 
 ### `yarn build`
+
+Deploy the project to gitbug-pages, you can run:
+
+### `yarn build && yarn deploy`
