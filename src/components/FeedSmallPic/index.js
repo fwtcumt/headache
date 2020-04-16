@@ -45,7 +45,7 @@ class FeedSmallPic extends React.Component {
               {data.info}
             </div>
             <div className="info-r">
-              {isAd && <div className="pretag close" onClick={this.handleRemove} />}
+              {isAd && <span className="pretag close" onClick={this.handleRemove} />}
             </div>
           </div>
         </div>
