@@ -50,9 +50,6 @@
     }
     .plusnav {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       width: 40px;
       box-shadow: -4px 0 5px -3px #aaa;
       &::before, &::after {
@@ -62,12 +59,16 @@
         background-color: #f85959;
       }
       &::before {
-        width: 17px;
+        width: 18px;
         height: 2px;
+        left: 11px;
+        top: 17px;
       }
       &::after {
         width: 2px;
-        height: 17px;
+        height: 18px;
+        left: 19px;
+        top: 9px;
       }
     }
   }
