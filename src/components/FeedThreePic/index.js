@@ -37,7 +37,7 @@ class FeedThreePic extends React.Component {
       <SmartLink className="feed feed-threepic" {...linkUrl}>
         <div className="feed-tit line3">{data.title}</div>
         {pics.length > 0 && <div className="feed-pic">
-          {pics.map(pic => <img key={pic} src={pic} alt=""/>)}
+          {pics.map((pic, i) => <img key={i} src={pic} alt=""/>)}
         </div>}
         <div className="feed-info">
           <div className="info-l">
