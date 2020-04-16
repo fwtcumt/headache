@@ -1,0 +1,157 @@
+.page-search {
+  display: flex;
+  flex-direction: column;
+
+  // 搜索头部
+  .header {
+    padding: 10px 17px;
+    border-bottom: 1px solid #e8e8e8;
+    .searchbox {
+      position: relative;
+      height: 44px;
+      padding-left: 14px;
+      border: 1px solid #333;
+      border-radius: 2px;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        color: #222;
+        caret-color:red;
+        padding-right: 30px;
+        height: 40px;
+        background-color: transparent;
+        &:disabled {
+          background-color: transparent;
+          color: #aaa;
+        }
+      }
+      .searchbtn {
+        width: 60px;
+        text-align: center;
+        border-left: 1px solid #e8e8e8;
+        font-size: 16px;
+        font-weight: bolder;
+        height: 22px;
+        line-height: 22px;
+        &.loading {
+          background: url('../../assets/loading.gif') no-repeat center;
+          background-size: 24px;
+        }
+      }
+      .clear {
+        position: absolute;
+        top: 10px;
+        right: 63px;
+        height: 24px;
+        width: 24px;
+        background: url(../../assets/clear.png) no-repeat center;
+        background-size: contain;
+        display: none;
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // 主体
+  .body {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  // 搜索状态
+  .loading-content {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding-top: 30px;
+  }
+
+  // 联想搜索词
+  .associatewords {
+    padding: 0 17px 10px;
+    .word {
+      height: 46px;
+      line-height: 46px;
+      color: #222;
+      font-weight: bolder;
+      padding-left: 30px;
+      background: url(../../assets/search_pray.png) no-repeat left center;
+      background-size: 24px;
+      border-bottom: 1px solid #e8e8e8;
+      .match {
+        color: #999;
+        font-weight: normal;
+      }
+    }
+  }
+
+  // 猜测搜索词
+  .guessword {
+    .guess-tit {
+      margin: 0 17px;
+      font-size: 14px;
+      color: #999;
+      line-height: 40px;
+    }
+    .guess-list {
+      display: flex;
+      flex-wrap: wrap;
+      .guess-item {
+        position: relative;
+        width: 50%;
+        padding: 0 17px;
+        line-height: 38px;
+        color: #222;
+        &.rec {
+          padding-left: 40px;
+          background: url(./images/tag_rec.png) no-repeat 17px center;
+          background-size: 17px;
+        }
+        &:nth-child(odd) {
+          &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 1px;
+            height: 16px;
+            background-color: #e8e8e8;
+          }
+        }
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // 搜索结果
+  .resultword {
+    .result-tit {
+      margin: 0 17px;
+      font-size: 14px;
+      color: #999;
+      line-height: 40px;
+    }
+    .noresult {
+      margin: 20px 17px 0;
+      text-align: center;
+      color: #222;
+      b {
+        color: red;
+      }
+    }
+  }
+}
