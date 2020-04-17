@@ -17,7 +17,10 @@ body {
   margin: 0 auto;
 }
 
-a {
+a,a:hover,a:active,a:visited,a:link,a:focus{
+  -webkit-tap-highlight-color: transparent;
+  outline:none;
+  background: none;
   text-decoration: none;
 }
 
@@ -64,7 +67,59 @@ a {
   &:last-of-type {
     border-bottom-color: transparent;
   }
-  // 头部文字
+  // 信息头
+  .feed-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    margin-bottom: 12px;
+    .author-avatar {
+      position: relative;
+      width: 36px;
+      margin-right: 10px;
+      img {
+        float: left;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+      .vip {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        height: 14px;
+        width: 14px;
+        background: url(./assets/vip.png) no-repeat center;
+        background-size: 14px;
+      }
+    }
+    .author-info {
+      flex: 1;
+      .name {
+        color: #222;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .label {
+        font-size: 12px;
+        color: #999;
+      }
+    }
+    .author-friend {
+      width: 60px;
+      text-align: right;
+      font-size: 14px;
+      .friend {
+        color: #999;
+      }
+      .unfriend {
+        color: #f85959;
+      }
+    }
+  }
+  // 信息标题
   .feed-tit {
     font-size: 17px;
     line-height: 1.4;
@@ -80,6 +135,9 @@ a {
     .info-l {
       display: flex;
       align-items: center;
+      span {
+        margin-right: 6px;
+      }
       .pretag {
         margin-right: 4px;
       }
@@ -106,9 +164,9 @@ a {
       }
       &.close {
         width: 16px;
-        height: 12px;
+        height: 10px;
         background: url(./assets/cross.png) no-repeat center;
-        background-size: 8px;
+        background-size: 6px;
       }
     }
   }
@@ -166,25 +224,24 @@ a {
 
   // 视频信息流
   &.feed-video {
-    position: relative;
-    .feed-tit {
-      position: absolute;
-      left: 0;
-      top: 16px;
-      z-index: 4;
-      width: 100%;
-      color: #eee;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-      height: 40%;
-      font-size: 14px;
-      padding: 5px 10px;
-    }
     .feed-pic {
       position: relative;
       overflow: hidden;
       img {
         float: left;
         width: 100%;
+      }
+      .feed-tit {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        width: 100%;
+        color: #eee;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        height: 40%;
+        font-size: 14px;
+        padding: 5px 10px;
       }
       .videoplay {
         position: absolute;
@@ -197,11 +254,11 @@ a {
       .videotime {
         position: absolute;
         bottom: 4px; right: 4px; z-index: 3;
-        padding: 4px 10px;
+        padding: 2px 8px;
         color: #eee;
         background-color: rgba(0,0,0,.2);
         font-size: 10px;
-        border-radius: 10px;
+        border-radius: 8px;
       }
     }
   }
