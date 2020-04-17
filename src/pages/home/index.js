@@ -1,8 +1,5 @@
 import React from 'react';
-import FeedSmallPic from 'components/FeedSmallPic';
-import FeedThreePic from 'components/FeedThreePic';
-import FeedBigPic from 'components/FeedBigPic';
-import FeedVideo from 'components/FeedVideo';
+import FeedFlow from 'components/FeedFlow';
 import Header from './components/header.js';
 import Navbar from './components/navbar.js';
 import './index.less';
@@ -14,13 +11,6 @@ const placePic = {
   videoPic: 'https://placekitten.com/600/310',
   avatarPic: 'https://placekitten.com/100/100'
 };
-
-const feedComponents = {
-  smallpic: FeedSmallPic,
-  threepic: FeedThreePic,
-  bigpic: FeedBigPic,
-  feedvideo: FeedVideo
-}
 
 const mockFeedList = [
   {
@@ -227,9 +217,8 @@ class Home extends React.Component {
         <Navbar type={navType} onChangeNav={this.handleChangeNav} />
         <div className="feedlist">
           {feedList.map((item, idx) => {
-            const FeedItem = feedComponents[item.feedType];
             return (
-              <FeedItem
+              <FeedFlow
                 key={item.id}
                 data={item}
                 onFriend={(isFriend) => this.handleFeedFriend(idx, isFriend)}
