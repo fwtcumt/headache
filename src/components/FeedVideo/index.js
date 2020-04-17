@@ -50,7 +50,7 @@ class FeedVideo extends React.Component {
     const { name, avatar, label, vip, friend } = author;
     const linkUrl = {
       href: isAd && adLink,
-      to: !isAd && `/p/${data.id}`
+      to: !isAd && `/video/${data.id}`
     };
 
     return (

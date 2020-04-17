@@ -1,0 +1,157 @@
+.page-video {
+  background-color: #111;
+
+  // 视频也头部
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bolder;
+    color: #fff;
+    .back {
+      width: 44px;
+      background: url(../../assets/back_white.png) no-repeat center;
+      background-size: 22px;
+    }
+    .search {
+      width: 50px;
+      background: url(../../assets/search_white.png) no-repeat center;
+      background-size: 22px;
+    }
+  } 
+
+  // 视频
+  .video-item {
+    .video-hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 58px;
+      padding: 10px 15px 15px;
+
+      .author-avatar {
+        position: relative;
+        width: 36px;
+        margin-right: 10px;
+        img {
+          float: left;
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+        .vip {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
+          height: 14px;
+          width: 14px;
+          background: url(../../assets/vip.png) no-repeat center;
+          background-size: 14px;
+        }
+      }
+      .author-info {
+        flex: 1;
+        .name {
+          color: #ddd;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .label {
+          font-size: 12px;
+          color: #bbb;
+        }
+      }
+      .author-friend {
+        width: 60px;
+        text-align: right;
+        font-size: 14px;
+        .friend {
+          color: #999;
+        }
+        .unfriend {
+          color: #f85959;
+        }
+      }
+    }
+
+    .video-content {
+      position: relative;
+      overflow: hidden;
+      .poster {
+        float: left;
+        width: 100%;
+      }
+      .video-title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        width: 100%;
+        color: #eee;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+        height: 40%;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+      .playbtn {
+        position: absolute;
+        top: 0; left: 0; z-index: 2;
+        height: 100%;
+        width: 100%;
+        background: url(../../assets/play_pray.png) no-repeat center;
+        background-size: 50px;
+      }
+      .videotime {
+        position: absolute;
+        bottom: 10px; right: 8px; z-index: 3;
+        padding: 2px 8px;
+        color: #eee;
+        background-color: rgba(0,0,0,.2);
+        font-size: 10px;
+        border-radius: 8px;
+      }
+      .video {
+        float: left;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        &.play {
+          opacity: 1;
+          height: auto;
+        }
+      }
+    }
+
+    .video-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 15px 20px;
+      color: #ddd;
+      font-size: 14px;
+      span {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        height: 24px;
+        background: no-repeat left center;
+        background-size: 22px;
+        &.share {
+          background-image: url(../../assets/share.png);
+        }
+        &.collect {
+          background-image: url(../../assets/collect.png);
+        }
+        &.comment {
+          background-image: url(../../assets/comment.png);
+        }
+        &.like {
+          background-image: url(../../assets/like.png);
+        }
+      }
+    }
+  }
+}
