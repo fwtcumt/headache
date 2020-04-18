@@ -1,8 +1,8 @@
 // 信息流模板
 .feed {
   display: block;
-  margin: 0 15px;
-  padding: 16px 0;
+  margin: 0 10px;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(221,221,221,.4);
   &:last-of-type {
     border-bottom-color: transparent;
@@ -65,6 +65,12 @@
     line-height: 1.4;
     color: #222;
   }
+  // 点击过的信息标题
+  &:visited {
+    .feed-tit {
+      color: #666;
+    }
+  }
   // 图片容器
   .feed-pic {
     overflow: hidden;
@@ -73,44 +79,32 @@
   .feed-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 12px;
+    line-height: 20px;
     color: #999;
     .info-l {
-      display: flex;
-      align-items: center;
       span {
         margin-right: 6px;
-      }
-      .pretag {
-        margin-right: 4px;
+        &.ad {
+          background-color: #eee;
+          padding: 0 2PX;
+          color: #888;
+          border-radius: 1px;
+        }
+        &.red {
+          color: #f85959;
+        }
       }
     }
     .info-r {
       display: flex;
-      align-items: center;
-      .pretag {
-        margin-left: 4px;
-      }
-    }
-    .pretag {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 1px rgb(153, 153, 153);
-      border-radius: 1px;
-      font-size: 10px;
-      padding: 0 4px;
-      height: 14px;
-      &.red {
-        color: #f85959;
-        box-shadow: 0 0 1px rgba(248, 89, 89, 1);
-      }
-      &.close {
-        width: 16px;
+      align-self: center;
+      .close {
         height: 10px;
-        background: url(../../assets/cross.png) no-repeat center;
-        background-size: 6px;
+        width: 14px;
+        background: url(../../assets/cross.png) no-repeat center #eee;
+        background-size: 8px;
       }
     }
   }

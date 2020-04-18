@@ -55,15 +55,15 @@ class FeedFlow extends React.Component {
     return (
       <div className="feed-info" onClick={this.preventClick}>
           <div className="info-l">
-            {isAd && <span className="pretag">广告</span>}
-            {isTop && <span className="pretag red">置顶</span>}
-            {isHot && <span className="pretag red">热门</span>}
+            {isAd && <span className="ad">广告</span>}
+            {isTop && <span className="red">置顶</span>}
+            {isHot && <span className="red">热门</span>}
             {!showHead && <span>{name}</span>}
             {!isAd && <span>评论 {commentNum}</span>}
             <span>{publishTime}</span>
           </div>
           <div className="info-r">
-            {isAd && <span className="pretag close" onClick={this.handleRemove} />}
+            {isAd && <span className="close" onClick={this.handleRemove} />}
           </div>
         </div>
     );
@@ -77,7 +77,7 @@ class FeedFlow extends React.Component {
       smallpic: (
         <>
           <div className="feed-l">
-            <div className="feed-tit line2">{title}</div>
+            <div className="feed-tit line3">{title}</div>
             {this.renderInfo()}
           </div>
           <div className="feed-r">

@@ -78,6 +78,26 @@
     flex: 1;
     overflow: auto;
     overflow-x: hidden;
+
+    // loading
+    .loading {
+      font-size: 14px;
+      width: 90px;
+      margin: 0 auto;
+      padding: 2px 0 2px 20px;
+      background: url(../../assets/loading.gif) no-repeat left center;
+      background-size: 16px;
+      color: #062b4e;
+    }
+
+    // success
+    .success {
+      text-align: center;
+      font-size: 14px;
+      color: #5ae643;
+      padding-top: 4px;
+      animation: successShowAndHide 2s linear forwards;
+    }
     
     // 到底了
     .feed-none {
@@ -85,6 +105,21 @@
       font-size: 12px;
       color: #999;
       padding: 10px 0;
+    }
+  }
+
+  @keyframes successShowAndHide {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
     }
   }
 }
