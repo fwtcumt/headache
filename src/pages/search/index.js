@@ -83,6 +83,7 @@ class Search extends React.Component {
     setTimeout(() => {
       const randomResult = Math.floor(Math.random() * 3); // 1/3的概率让你失败
       if (randomResult < 1) {
+        this.setState({ searchResult: [] });
         return this.changeContent('result');
       }
 
