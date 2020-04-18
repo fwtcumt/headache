@@ -8,6 +8,12 @@ class NavBar extends React.Component {
     this.state = {}
   }
 
+  componentDidMount() {
+    const curType = this.props.type;
+    const domEl = this[`nav${curType}`];
+    domEl.scrollIntoView();
+  }
+
   componentDidUpdate(preProps) {
     const preType = preProps.type;
     const curType = this.props.type;
