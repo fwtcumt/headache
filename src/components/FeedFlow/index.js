@@ -77,7 +77,7 @@ class FeedFlow extends React.Component {
       smallpic: (
         <>
           <div className="feed-l">
-            <div className="feed-tit line3">{title}</div>
+            <div className="feed-tit line3" dangerouslySetInnerHTML={{ __html: title }}></div>
             {this.renderInfo()}
           </div>
           <div className="feed-r">
@@ -87,7 +87,7 @@ class FeedFlow extends React.Component {
       ),
       threepic: (
         <>
-          <div className="feed-tit line3">{title}</div>
+          <div className="feed-tit line3" dangerouslySetInnerHTML={{ __html: title }}></div>
           {pics.length > 0 && <div className="feed-pic">
             {pics.map((pic, i) => <img key={i} src={pic} alt=""/>)}
           </div>}
@@ -96,7 +96,7 @@ class FeedFlow extends React.Component {
       ),
       bigpic: (
         <>
-          <div className="feed-tit line3">{title}</div>
+          <div className="feed-tit line3" dangerouslySetInnerHTML={{ __html: title }}></div>
           {pics[0] && <div className="feed-pic">
             <img src={pics[0]} alt=""/>
           </div>}
@@ -108,7 +108,7 @@ class FeedFlow extends React.Component {
           <div className="feed-pic">
             <img src={pics[0]} alt=""/>
             <div className="feed-tit">
-              <div className="line2">{title}</div>
+              <div className="line2" dangerouslySetInnerHTML={{ __html: title }}></div>
             </div>
             <span className="videoplay" />
             <span className="videotime">{duration}</span>

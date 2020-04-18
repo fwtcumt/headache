@@ -1,5 +1,6 @@
 import React from 'react';
 import Qs from 'qs';
+import { getStore } from 'utils/createStore';
 import GuessWord from './components/guessword';
 import AssociateWord from './components/associateword';
 import Resultword from './components/resultword';
@@ -74,13 +75,68 @@ class Search extends React.Component {
   // 执行搜索请求
   handleSearch = () => {
     const { searchWord } = this.state;
+    const placePic = getStore('placePic');
 
     if (!searchWord) return;
 
-    console.log(searchWord);
     this.changeContent('loading');
     setTimeout(() => {
-      this.changeContent('result');
+      const randomResult = Math.floor(Math.random() * 3); // 1/3的概率让你失败
+      if (randomResult < 1) {
+        return this.changeContent('result');
+      }
+
+      this.setState({
+        searchResult: [
+          {
+            id: '6816866417774690824',
+            title: `发现<span class="lighting">${searchWord}</span>和朱一龙的恋情进行的并没有那么顺利，其实大家也不必过分担心啦`,
+            publishTime: '1分钟前',
+            commentNum: '3.0万',
+            feedType: 'smallpic',
+            pics: [placePic.smallPic],
+            author: {
+              name: '八卦精',
+              avatar: placePic.avatarPic,
+              label: '娱乐资讯创作者',
+              vip: true
+            },
+            isHot: true,
+          },
+          {
+            id: '6816548336091267588',
+            title: `疫情结束我最想做的事就是去玩<span class="lighting">${searchWord}</span>，网友：也太过分了！`,
+            publishTime: '2分钟前',
+            commentNum: '1701',
+            feedType: 'smallpic',
+            pics: [placePic.smallPic],
+            author: {
+              name: '蔡徐坤',
+              avatar: placePic.avatarPic,
+              label: '优质篮球舞蹈教练',
+              vip: true
+            },
+          },
+          {
+            id: '6816048339091267588',
+            title: `你想要的<span class="lighting">${searchWord}</span>都在这里。突然感觉就被骗了，呜呜~~~~`,
+            publishTime: '刚刚',
+            commentNum: 0,
+            feedType: 'smallpic',
+            pics: [placePic.smallPic],
+            author: {
+              name: '今日头疼',
+              avatar: placePic.avatarPic,
+              label: '头疼官方账号',
+              vip: true,
+            },
+            adLink: 'https://www.toutiao.com',
+            isAd: true
+          }
+        ]
+      }, () => {
+        this.changeContent('result');
+      });
     }, 1000);
   }
 

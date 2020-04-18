@@ -10,24 +10,29 @@ class AssociateWord extends React.Component {
     const word = this.props.word;
     return [
       {
-        word: `今天是${word}的生日吗`,
-        html: <span>今天是<span className="match">{word}</span>的生日吗</span>
+        word: `${word}挂了吗`,
+        html: <span><span className="match">{word}</span>挂了吗</span>
       },
       {
-        word: `${word}是最美的`,
-        html: <span><span className="match">{word}</span>是最美的</span>
+        word: `${word}破产了`,
+        html: <span><span className="match">{word}</span>破产了</span>
       },
       {
-        word: `我喜欢${word}`,
-        html: <span>我喜欢<span className="match">{word}</span></span>
+        word: `${word}被列入失信被执行人`,
+        html: <span><span className="match">{word}</span>被列入失信被执行人</span>
       },
       {
-        word: `我想你了${word}`,
-        html: <span>我想你了<span className="match">{word}</span></span>
+        word: `美国制裁${word}`,
+        html: <span>美国制裁<span className="match">{word}</span></span>
       },
       {
-        word: `除了${word}，我谁都不理`,
-        html: <span>除了<span className="match">{word}</span>，我谁都不理</span>
+        word: `${word}获得了诺贝尔奖`,
+        html: <span><span className="match">{word}</span>获得了诺贝尔奖</span>
+      },
+      {
+        word: `如果以上语句有伤害到你，抱歉`,
+        html: <span>如果以上语句有伤害到你，抱歉</span>,
+        disabled: true
       }
     ];
   }
@@ -42,7 +47,12 @@ class AssociateWord extends React.Component {
           <div
             key={item.word}
             className="word line1"
-            onClick={() => onSelectWord && onSelectWord(item.word)}
+            onClick={() => {
+              if (item.disabled) {
+                return alert('别搜这个啊');
+              }
+              onSelectWord && onSelectWord(item.word);
+            }}
           >
             {item.html}
           </div>

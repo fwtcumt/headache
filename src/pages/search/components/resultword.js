@@ -1,4 +1,5 @@
 import React from 'react';
+import FeedFlow from 'components/FeedFlow';
 
 class ResultWord extends React.Component {
   constructor(props) {
@@ -15,7 +16,15 @@ class ResultWord extends React.Component {
         {result.length === 0 && <div className="noresult">
           抱歉，没有找到关于『<b>{word}</b>』的任何内容
         </div>}
-        {result.length > 0 && <div>有结果！</div>}
+        {result.map((item, idx) => {
+            return (
+              <FeedFlow
+                key={item.id}
+                data={item}
+                onRemove={() => alert('不准移除！')}
+              />
+            );
+        })}
       </div>
     );
   }

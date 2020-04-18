@@ -5,28 +5,40 @@ import './index.less';
 
 const hotWords = [
   {
-    word: '祝钒刚因涉毒被捕',
-    search: '1008.0万',
+    word: '纽约州长说防疫物资都来自中国',
+    search: '483万',
     isHot: true,
-    isNew: true
   },
   {
-    word: '新冠肺炎疫苗啥时候出来啊',
-    search: '599.0万',
+    word: '淘宝天猫总裁蒋凡因传言致歉',
+    search: '466万',
     isHot: true
   },
   {
-    word: '今年我国航天发射连续失败两次',
-    search: '106.4万',
+    word: '入境泪崩的留学生做志愿者',
+    search: '450万',
+  },
+  {
+    word: '印度确诊病例20天涨近20倍',
+    search: '434万',
+  },
+  {
+    word: '大使痛批个别人闯关回国',
+    search: '404万',
     isNew: true
   },
   {
-    word: '特朗普甩锅',
-    search: '44.5万',
+    word: '武汉疫情等级降至低风险',
+    search: '363万',
   },
   {
-    word: '美国确诊人数创新高',
-    search: '35.7万',
+    word: '扬州被联合国授予世界美食之都新',
+    search: '293万',
+    isNew: true
+  },
+  {
+    word: '京津冀区域健康状态互认',
+    search: '290万',
   }
 ];
 

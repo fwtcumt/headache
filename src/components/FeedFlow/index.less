@@ -64,6 +64,10 @@
     font-size: 17px;
     line-height: 1.4;
     color: #222;
+    .lighting {
+      color: #f85959;
+      font-weight: bold;
+    }
   }
   // 点击过的信息标题
   &:visited {
@@ -101,10 +105,11 @@
       display: flex;
       align-self: center;
       .close {
-        height: 10px;
-        width: 14px;
-        background: url(../../assets/cross.png) no-repeat center #eee;
+        height: 14px;
+        width: 20px;
+        background: url(../../assets/cross.png) no-repeat center #efefef;
         background-size: 8px;
+        border-radius: 2px;
       }
     }
   }
@@ -164,8 +169,9 @@
         color: #eee;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
         height: 40%;
-        font-size: 15px;
+        font-size: 16px;
         padding: 5px 10px;
+        border-radius: 2px 2px;
       }
       .videoplay {
         position: absolute;
@@ -177,10 +183,11 @@
       }
       .videotime {
         position: absolute;
-        bottom: 8px; right: 8px; z-index: 3;
-        padding: 2px 8px;
+        bottom: 6px; right: 6px; z-index: 3;
+        line-height: 16px;
+        padding: 0 8px;
         color: #eee;
-        background-color: rgba(0,0,0,.2);
+        background-color: rgba(0,0,0,.4);
         font-size: 10px;
         border-radius: 8px;
       }

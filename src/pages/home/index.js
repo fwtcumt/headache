@@ -96,9 +96,9 @@ class Home extends React.Component {
           adLink: 'https://36kr.com',
           pics: [placePic.smallPic],
           author: {
-            name: '鸿儿哥哥',
+            name: '36氪',
             avatar: placePic.avatarPic,
-            label: '优秀广告竞价者',
+            label: '36氪官方头疼号',
             vip: true
           },
           isAd: true,
@@ -190,16 +190,17 @@ class Home extends React.Component {
         },
         {
           id: '6815537455467332103',
-          title: '拿回一大袋葱，好奇的各种闻舔咬。',
+          title: '数字货币落地，对我们的生活有什么影响？',
           publishTime: '19分钟前',
           commentNum: 301,
           feedType: 'feedvideo',
-          duration: '01:29',
+          duration: '04:49',
           pics: [placePic.videoPic],
           author: {
-            name: '秀外慧中2008',
+            name: '烦立停',
             avatar: placePic.avatarPic,
-            label: '优质生活信息创作者'
+            label: '优质视频作者',
+            vip: true
           },
           showHead: true,
         },
@@ -241,9 +242,10 @@ class Home extends React.Component {
           feedType: 'bigpic',
           pics: [placePic.bigPic],
           author: {
-            name: '鸿儿哥哥',
+            name: '抖音',
             avatar: placePic.avatarPic,
-            label: '优秀广告竞价者'
+            label: '抖音短视频头疼号',
+            vip: true,
           },
           adLink: 'https://www.douyin.com/',
           isAd: true,
