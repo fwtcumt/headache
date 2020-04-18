@@ -1,20 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const navList = [
-  { type: 1, name: '推荐' },
-  { type: 2, name: '视频' },
-  { type: 3, name: '热点' },
-  { type: 4, name: '社会' },
-  { type: 5, name: '娱乐' },
-  { type: 6, name: '军事' },
-  { type: 7, name: '科技' },
-  { type: 8, name: '汽车' },
-  { type: 9, name: '房产' },
-  { type: 10, name: '家居' },
-  { type: 11, name: '体育' },
-  { type: 12, name: '财经' }
-];
+import { getStore } from 'utils/createStore';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -38,16 +24,17 @@ class NavBar extends React.Component {
 
   render() {
     const { type, onChangeNav } = this.props;
+    const includeChannels = getStore('channelList').filter(v => v.include);
 
     return (
       <div className="navbar">
         <div className="navlist">
-          {navList.map(item => (
+          {includeChannels.map(item => (
             <span
-              key={item.type}
-              ref={el => this[`nav${item.type}`] = el}
-              className={item.type === type ? 'nav active' : 'nav'}
-              onClick={() => onChangeNav(item.type)}
+              key={item.id}
+              ref={el => this[`nav${item.id}`] = el}
+              className={item.id === type ? 'nav active' : 'nav'}
+              onClick={() => onChangeNav(item.id)}
             >{item.name}</span>
           ))}
         </div>
