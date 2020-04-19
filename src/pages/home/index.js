@@ -32,7 +32,7 @@ class Home extends React.Component {
   // 设置信息流滚动的位置
   setFeedListScroll = () => {
     const homeFlowListScrollTop = getStore('homeFlowListScrollTop');
-    this.feedListDom.scrollTop = homeFlowListScrollTop || 0;
+    if (homeFlowListScrollTop) this.feedListDom.scrollTop = homeFlowListScrollTop;
   }
 
   // 拉取信息流

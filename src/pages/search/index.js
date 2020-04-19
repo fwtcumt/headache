@@ -81,8 +81,8 @@ class Search extends React.Component {
 
     this.changeContent('loading');
     setTimeout(() => {
-      const randomResult = Math.floor(Math.random() * 3); // 1/3的概率让你失败
-      if (randomResult < 1) {
+      const randomResult = Math.floor(Math.random() * 4); // 1/4的概率让你失败
+      if (randomResult === 0) {
         this.setState({ searchResult: [] });
         return this.changeContent('result');
       }

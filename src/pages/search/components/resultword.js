@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from 'components/Modal';
 import FeedFlow from 'components/FeedFlow';
 
 class ResultWord extends React.Component {
@@ -16,12 +17,12 @@ class ResultWord extends React.Component {
         {result.length === 0 && <div className="noresult">
           抱歉，没有找到关于『<b>{word}</b>』的任何内容
         </div>}
-        {result.map((item, idx) => {
+        {result.map(item => {
             return (
               <FeedFlow
                 key={item.id}
                 data={item}
-                onRemove={() => alert('不准移除！')}
+                onRemove={() => Modal.alert('不准移除！')}
               />
             );
         })}

@@ -6,18 +6,15 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMessageModal: false
+      modalVisible: false
     }
   }
 
   handleOpenMessage = () => {
-    this.setState(({ showMessageModal }) => {
-      return { showMessageModal: !showMessageModal };
-    });
+    this.setState({ modalVisible: true });
   }
 
   render() {
-    const { showMessageModal } = this.state;
 
     return (
       <header className="header">
@@ -25,10 +22,18 @@ class Header extends React.Component {
         <div className="hd-m" />
         <Link className="hd-r" to="/hot" />
 
+        {/* 消息盒子 */}
         <Modal
-          visible={showMessageModal}
-          onClose={() => this.setState({ showMessageModal: false })}
-        />
+          visible={this.state.modalVisible}
+        >
+          <div style={{ color: '#fff' }}>
+            <h1>
+              <button onClick={() => this.setState({ modalVisible: false })}>《 返回</button>
+              我的消息盒子
+            </h1>
+            <p>不开发了，对css烦了=_=!</p>
+          </div>
+        </Modal>
       </header>
     );
   }
