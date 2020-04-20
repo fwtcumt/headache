@@ -17,7 +17,7 @@
     }
   }
   .alert-mask {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 999;
@@ -91,27 +91,7 @@
 
 // 用于modal
 .modal-root {
-  @keyframes modal-from-bottom {
-    from {
-      top: 100%;
-      opacity: 0;
-    }
-    to {
-      top: 0;
-      opacity: 1;
-    }
-  }
-  @keyframes modal-from-right {
-    from {
-      left: 100%;
-      opacity: 0;
-    }
-    to {
-      left: 0;
-      opacity: 1;
-    }
-  }
-  @keyframes modal-from-left {
+  @keyframes modal-enter-left {
     from {
       left: -100%;
       opacity: 0;
@@ -121,8 +101,58 @@
       opacity: 1;
     }
   }
+  @keyframes modal-exit-left {
+    from {
+      left: 0;
+      opacity: 1;
+    }
+    to {
+      left: -100%;
+      opacity: 0;
+    }
+  }
+  @keyframes modal-enter-right {
+    from {
+      left: 100%;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes modal-exit-right {
+    from {
+      left: 0;
+      opacity: 1;
+    }
+    to {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+  @keyframes modal-enter-bottom {
+    from {
+      top: 100%;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes modal-exit-bottom {
+    from {
+      top: 0;
+      opacity: 1;
+    }
+    to {
+      top: 100%;
+      opacity: 0;
+    }
+  }
   .modal-mask {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 999;
@@ -131,19 +161,28 @@
     background-color: rgba(0,0,0,.6);
     opacity: 1;
     overflow: hidden;
-    &.from-bottom {
-      animation: modal-from-bottom 300ms ease-out;
+    &.enter-left {
+      animation: modal-enter-left 300ms ease-out;
     }
-    &.from-right {
-      animation: modal-from-right 300ms ease-out;
+    &.exit-left {
+      animation: modal-exit-left 300ms linear;
     }
-    &.from-left {
-      animation: modal-from-left 300ms ease-out;
+    &.enter-right {
+      animation: modal-enter-right 300ms ease-out;
     }
-    
+    &.exit-right {
+      animation: modal-exit-right 300ms linear;
+    }
+    &.enter-bottom {
+      animation: modal-enter-bottom 300ms ease-out;
+    }
+    &.exit-bottom {
+      animation: modal-exit-bottom 300ms linear;
+    }
+
     .modal-site {
       height: 100%;
-      width: 100%;
+      max-width: 100%;
       overflow: hidden;
       overflow-y: auto;
     }

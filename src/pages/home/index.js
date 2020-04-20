@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect, getStore, setStore } from 'utils/createStore';
+import Modal from 'components/Modal';
 import FeedFlow from 'components/FeedFlow';
 import Header from './components/header.js';
 import Navbar from './components/navbar.js';
@@ -296,9 +297,14 @@ class Home extends React.Component {
 
   // 移除广告
   handleFeedRemove = (idx) => {
-    const { homeFlowList } = this.props;
-    homeFlowList.splice(idx, 1);
-    this.props.dispatch({ homeFlowList });
+    Modal.confirm({
+      content: '优质广告，您确定要屏蔽么？屏蔽后，将永不再为您推荐',
+      onOk: () => {
+        const { homeFlowList } = this.props;
+        homeFlowList.splice(idx, 1);
+        this.props.dispatch({ homeFlowList });
+      }
+    });
   }
    
   render() {

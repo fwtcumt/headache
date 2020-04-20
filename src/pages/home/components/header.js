@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'components/Modal';
+import Messagebox from './messagebox.js';
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,14 +26,9 @@ class Header extends React.Component {
         {/* 消息盒子 */}
         <Modal
           visible={this.state.modalVisible}
+          direction="left"
         >
-          <div style={{ color: '#fff' }}>
-            <h1>
-              <button onClick={() => this.setState({ modalVisible: false })}>《 返回</button>
-              我的消息盒子
-            </h1>
-            <p>不开发了，对css烦了=_=!</p>
-          </div>
+          <Messagebox onBack={() => this.setState({ modalVisible: false })} />
         </Modal>
       </header>
     );

@@ -72,6 +72,10 @@ class Modal extends React.Component {
       this.modalRoot.className = 'modal-root';
       document.body.appendChild(this.modalRoot);
     }
+
+    this.state = {
+      isExiting: false
+    }
   }
 
   static alert = (config) => {
@@ -82,13 +86,41 @@ class Modal extends React.Component {
     alertFn(config, true);
   }
 
-  render() {
-    const { visible } = this.props;
+  enterClass = {
+    left: 'enter-left',
+    right: 'enter-right',
+    bottom: 'enter-bottom'
+  }
 
-    if (!visible) return null;
+  exitClass = {
+    left: 'exit-left',
+    right: 'exit-right',
+    bottom: 'exit-bottom'
+  }
+
+  componentDidUpdate(preProps) {
+    if (preProps.visible && !this.props.visible) {
+      this.setState({ isExiting: true });
+      this.slideTimer = setTimeout(() => {
+        this.setState({ isExiting: false });
+      }, 290);
+    } else if (!preProps.visible && this.props.visible) {
+      clearTimeout(this.slideTimer);
+      this.slideTimer = null;
+      this.setState({ isExiting: false });
+    }
+  }
+
+  render() {
+    const { visible, direction = 'left' } = this.props;
+    const { isExiting } = this.state;
+
+    if (!visible && !isExiting) return null;
+
+    const maskAniCls = isExiting ? this.exitClass[direction] : this.enterClass[direction];
 
     return createPortal(
-      <div className="modal-mask from-left">
+      <div className={`modal-mask ${maskAniCls}`}>
         <div className="modal-site">
           {this.props.children}
         </div>
