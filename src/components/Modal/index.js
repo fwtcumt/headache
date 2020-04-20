@@ -3,10 +3,13 @@ import { createPortal } from 'react-dom';
 import './index.less';
 
 function alertFn(config, isConfirm) {
+  // 避免恶意的重复创建
+  if (document.querySelector('.alert-root')) return;
+  
   if (!config) {
     config = { content: config === 0 ? '0' : '' };
   } else if (typeof config !== 'object') {
-    config = { content: config.toString() };
+    config = { content: String(config) };
   }
 
   const alertRoot = document.createElement('div');
