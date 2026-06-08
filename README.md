@@ -12,6 +12,6 @@ To build the project, you can run:
 
 ### `yarn build`
 
-Deploy the project to gitbug-pages, you can run:
+发布到 gitbug-pages, you can run:
 
 ### `yarn build && yarn deploy`
